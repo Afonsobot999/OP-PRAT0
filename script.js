@@ -1,22 +1,30 @@
-function sendMessage() {
-    var userMessage = document.getElementById("userMessage").value;
-    var messageBox = document.getElementById("messages");
+const matrix = document.querySelector('.matrix');
+const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+const matrixColumns = Math.floor(window.innerWidth / 20); // Define a largura do efeito
+const drops = [];
 
-    if (userMessage.trim() !== "") {
-        // Exibir mensagem do usuário
-        var userMessageElement = document.createElement("p");
-        userMessageElement.innerHTML = "<b>Você:</b> " + userMessage;
-        messageBox.appendChild(userMessageElement);
-
-        // Exibir resposta de Vohar após 1 segundo
-        setTimeout(function () {
-            var responseMessage = document.createElement("p");
-            responseMessage.innerHTML = "<b>Vohar:</b> Continue assim, você está perto... Decifre o código 741 - é uma chave!";
-            messageBox.appendChild(responseMessage);
-            messageBox.scrollTop = messageBox.scrollHeight; // Rola até o fim do chat
-        }, 1000);
-
-        // Limpa o campo de texto
-        document.getElementById("userMessage").value = "";
-    }
+// Inicializa as colunas
+for (let i = 0; i < matrixColumns; i++) {
+    drops[i] = 1; // Inicia a altura de cada coluna
 }
+
+// Função para criar o efeito de código
+function draw() {
+    let output = '';
+    for (let i = 0; i < drops.length; i++) {
+        const char = characters.charAt(Math.floor(Math.random() * characters.length));
+        output += char + '<br/>';
+
+        // Reinicia a altura se necessário
+        if (drops[i] * 20 > window.innerHeight && Math.random() > 0.975) {
+            drops[i] = 0; // Reinicia a queda
+        }
+
+        // Aumenta a altura da coluna
+        drops[i]++;
+    }
+    matrix.innerHTML = output;
+}
+
+// Atualiza a animação a cada 50ms
+setInterval(draw, 50);
