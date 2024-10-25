@@ -31,12 +31,12 @@ body {
 
 h1 {
     font-size: 3em; /* Tamanho maior para o título */
-    color: #2c3e50; /* Cor do texto */
+    color: #00ff00; /* Cor verde para o título */
 }
 
 p {
     font-size: 1.2em; /* Tamanho do texto */
-    color: #34495e; /* Cor do texto do parágrafo */
+    color: #00ff00; /* Cor verde para o parágrafo */
     line-height: 1.5; /* Espaçamento entre linhas */
     margin: 10px 0; /* Margem superior e inferior */
 }
@@ -55,3 +55,4 @@ button {
 button:hover {
     background-color: #2980b9; /* Cor ao passar o mouse */
 }
+
