@@ -2,7 +2,10 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden; /* Remove barra de rolagem */
-    background-color: black; /* Fundo preto */
+    background-image: https://classic.exame.com/wp-content/uploads/2018/11/aa-film-still-8-e1541512207714.jpg?quality=70&strip=info&w=598('background.jpg'); /* Imagem de fundo */
+    background-size: cover; /* Faz a imagem cobrir toda a tela */
+    background-position: center; /* Centraliza a imagem */
+    background-repeat: no-repeat; /* Não repete a imagem */
 }
 
 .matrix {
@@ -55,4 +58,3 @@ button {
 button:hover {
     background-color: #2980b9; /* Cor ao passar o mouse */
 }
-
