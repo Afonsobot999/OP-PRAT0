@@ -1,67 +1,57 @@
 body {
-    font-family: 'Arial', sans-serif;
-    background-color: #121212;
-    color: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
     margin: 0;
+    padding: 0;
+    overflow: hidden; /* Remove barra de rolagem */
+    background-color: black; /* Fundo preto */
+}
+
+.matrix {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    color: #0f0; /* Cor verde do código */
+    font-family: 'Courier New', monospace; /* Fonte de monoespaço */
+    font-size: 20px; /* Tamanho da fonte */
+    opacity: 0.1; /* Opacidade para o fundo */
+    pointer-events: none; /* Ignora interações do mouse */
+    z-index: -1; /* Coloca atrás dos outros elementos */
 }
 
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     text-align: center;
-    background-color: #1c1c1c;
-    padding: 20px;
-    border-radius: 10px;
-    width: 80%;
-    max-width: 600px;
+    margin: 20px;
 }
 
 h1 {
-    color: #00ff88;
+    font-size: 3em; /* Tamanho maior para o título */
+    color: #2c3e50; /* Cor do texto */
+}
+
+p {
+    font-size: 1.2em; /* Tamanho do texto */
+    color: #34495e; /* Cor do texto do parágrafo */
+    line-height: 1.5; /* Espaçamento entre linhas */
+    margin: 10px 0; /* Margem superior e inferior */
 }
 
 button {
-    background-color: #00ff88;
-    color: #000;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    margin-top: 20px;
+    background-color: #3498db; /* Cor de fundo */
+    color: white; /* Cor do texto */
+    border: none; /* Remove bordas */
+    padding: 15px 30px; /* Espaçamento interno */
+    font-size: 1em; /* Tamanho do texto */
+    border-radius: 5px; /* Cantos arredondados */
+    cursor: pointer; /* Muda o cursor ao passar sobre o botão */
+    transition: background-color 0.3s; /* Efeito de transição */
 }
 
 button:hover {
-    background-color: #00cc6f;
-}
-
-.chat-box {
-    background-color: #222;
-    padding: 20px;
-    border-radius: 10px;
-    margin-top: 20px;
-    text-align: left;
-}
-
-#messages {
-    margin-bottom: 20px;
-    height: 200px;
-    overflow-y: scroll;
-    border: 1px solid #444;
-    padding: 10px;
-    background-color: #2a2a2a;
-}
-
-input[type="text"] {
-    width: 80%;
-    padding: 10px;
-    margin-right: 10px;
-    border: none;
-    border-radius: 5px;
-}
-
-button {
-    padding: 10px 20px;
+    background-color: #2980b9; /* Cor ao passar o mouse */
 }
